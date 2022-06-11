@@ -1,0 +1,41 @@
+body{
+    height: 100vh;
+    background: url(/assets/images/login_bg.jpg) no-repeat center / cover;
+}
+.box{
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.box .title{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-box,.reg-box{
+    padding: 0 30px;
+}
+.reg-box{
+    display: none;
+}
+.link{
+    display: flex;
+    justify-content: end;
+}
+.layui-form-item{
+    position: relative;
+}
+.layui-form-item i{
+    position: absolute;
+    left: 15px;
+    top: 25%;
+    transform: translate(-50%);
+}
+.layui-form-item input{
+    padding-left: 30px;
+}
