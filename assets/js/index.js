@@ -11,8 +11,10 @@ $('.logout').click(function () {
         layer.close(index)
     })
 })
+//因为此页面其他页面会调用所以要封装一个函数，通过window.parent.initInfo()来调用
 //获取用户信息并渲染
-$.ajax({
+function initInfo() {
+    $.ajax({
     url: '/my/userinfo',
     // headers: {
     //     Authorization:localStorage.getItem('token')
@@ -36,3 +38,5 @@ $.ajax({
         $('.wel-text span').html(res.data.nickname || res.data.username)
     }
 })
+}
+initInfo()
