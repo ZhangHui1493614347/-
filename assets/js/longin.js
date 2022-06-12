@@ -4,7 +4,7 @@ $('.link a').click(function () {
 })
 //表单验证
 layui.form.verify({
-    usernameAndPassword: [/^[\S]{6,12}$/, '请输入6-12为字符'],
+    usernameAndPassword: [/^[\S]{6,12}$/, '请输入6-12位非空字符'],
     //再次输入密码验证
     repwd: function (value) {
         if (value !== $('.reg-box .pwd').val()){
