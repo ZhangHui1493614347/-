@@ -7,7 +7,7 @@ const options = {
     preview:'.preview'
 }
 //调用插件
-$img.cropper()
+$img.cropper(options)
 //选择图片
 $('.choose').click(function () {
     $('input[type=file]').click()
