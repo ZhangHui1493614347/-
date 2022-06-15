@@ -43,10 +43,10 @@ $('input[type=file]').on('change', function () {
         .cropper(options)
 })
 let state;
-$('pub-btn').click(function () {
-    state='上传'
+$('.pub-btn').click(function () {
+    state='已发布'
 })
-$('save-btn').click(function () {
+$('.save-btn').click(function () {
     state='草稿'
 })
 $('form').submit(function (e) {

@@ -5,8 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/assets/css/article_list.css">
 </head>
 <body>
-    12321321
+    <div class="layui-card ">
+        <div class="layui-card-header">文章列表</div>
+        <div class="layui-card-body select-form">
+            <!-- 筛选 -->
+            <div>
+                <form class="layui-form" action="">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <select name="cate_id" lay-verify="">
+                                
+                            </select>
+                        </div>
+                        <div class="layui-inline">
+                            <select name="state" lay-verify="">
+                                <option value="">所有状态</option>
+                                <option value="已发布">已发布</option>
+                                <option value="草稿">草稿</option>
+                            </select>
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn " lay-submit lay-filter="formDemo">筛选</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- 表格 -->
+            <table class="layui-table">
+                <colgroup>
+                    <col >
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>文章标题</th>
+                        <th>分类</th>
+                        <th>发表时间</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+            <!-- 分页 -->
+            <div id="page-box">
+
+            </div>
+        </div>
+    </div>
 </body>
+<!-- 创建分类select模板 -->
+<script type="text/html" id="select-temp">
+    <option value="">所有分类</option>
+    {{each data}}
+    <option value="{{$value.Id}}">{{$value.name}}</option>
+    {{/each}}
+</script>
+<!-- 创建表格模板 -->
+<script type="text/html" id="table-temp">
+    {{each data}}
+    <tr>
+        <td>{{$value.title}}</td>
+        <td>{{$value.cate_name}}</td>
+        <td>{{$value.pub_date|dataForm}}</td>
+        <td>{{$value.state}}</td>
+        <td>
+            <button data-id="{{$value.Id}}" type="button" class="remove layui-btn layui-btn-sm layui-btn layui-btn-danger">删除</button>
+        </td>
+    </tr>
+    {{/each}}
+</script>
+<script src="/assets/lib/jquery.js"></script>
+<script src="/assets/lib/layui/layui.all.js"></script>
+<script src="/assets/lib/template-web.js"></script>
+<script src="/assets/js/base.js"></script>
+<script src="/assets/js/article_list.js"></script>
 </html>
